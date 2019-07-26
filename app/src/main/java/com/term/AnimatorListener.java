@@ -2,9 +2,6 @@ package com.term;
 
 import android.animation.Animator;
 
-/**
- * Github: https://github.com/JeasonWong
- */
 public abstract class AnimatorListener implements Animator.AnimatorListener {
 
     @Override

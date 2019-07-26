@@ -5,10 +5,6 @@ import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.view.View;
 
-/**
- * created by zhengweis on 2019/6/24.
- * description：
- */
 public class AnimationUtil {
     /**
      * 渐透+扩大的动画效果+listener
