@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity
     private DrawerLayout drawer;//根布局
     private Toolbar toolbar;//标题操作栏
     private NavigationView navigationView;//侧边栏
-    private ImageView topImg, bottomImg, userImg, praiseImg;
+    private ImageView topImg, bottomImg, userImg, praiseImg, messageImg;
     private TextView title, subTitle, content, praiseNum, messageNum, userName;
 
     @Override
@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity
         messageNum = findViewById(R.id.message_num);
         userName = findViewById(R.id.user_name);
         praiseImg = findViewById(R.id.message_praise);
+        messageImg = findViewById(R.id.message_img);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -54,6 +55,17 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         praiseImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View v) {
+                AnimationUtil.AlphaScaleAnimator(v, new AnimatorListener() {
+                    @Override
+                    public void onAnimationEnd(Animator animation) {
+                        v.animate().alpha(1).scaleX(1).scaleY(1);
+                    }
+                });
+            }
+        });
+        messageImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
                 AnimationUtil.AlphaScaleAnimator(v, new AnimatorListener() {
